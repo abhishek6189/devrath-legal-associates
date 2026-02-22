@@ -89,7 +89,7 @@ const Contact = () => {
               <div className="space-y-8 text-muted-foreground">
                 <div className="flex gap-4 items-start">
                   <MapPin className="text-accent mt-1" />
-                  <p>Ahmedabad, Gujarat</p>
+                  <p>Vadodara, Gujarat</p>
                 </div>
 
                 <div className="flex gap-4 items-start">
