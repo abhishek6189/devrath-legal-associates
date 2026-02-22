@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500&family=Source+Sans+3:wght@300;400;500;600;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    /* Navy & Gold Law Firm Palette */
+    --background: 40 20% 97%;
+    --foreground: 220 30% 15%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 220 30% 15%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 220 30% 15%;
+
+    --primary: 220 45% 20%;
+    --primary-foreground: 40 30% 95%;
+
+    --secondary: 40 40% 94%;
+    --secondary-foreground: 220 30% 15%;
+
+    --muted: 220 15% 94%;
+    --muted-foreground: 220 10% 45%;
+
+    --accent: 40 65% 50%;
+    --accent-foreground: 220 45% 12%;
+
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 15% 88%;
+    --input: 220 15% 88%;
+    --ring: 40 65% 50%;
+
+    --radius: 0.375rem;
+
+    /* Custom tokens */
+    --navy: 220 45% 20%;
+    --navy-light: 220 35% 30%;
+    --navy-dark: 220 50% 12%;
+    --gold: 40 65% 50%;
+    --gold-light: 40 55% 65%;
+    --gold-dark: 40 70% 38%;
+    --cream: 40 30% 95%;
+    --warm-gray: 30 10% 60%;
+
+    --gradient-hero: linear-gradient(135deg, hsl(220 50% 12% / 0.85), hsl(220 45% 20% / 0.7));
+    --gradient-gold: linear-gradient(135deg, hsl(40 65% 50%), hsl(40 70% 38%));
+    --shadow-card: 0 4px 20px -4px hsl(220 45% 20% / 0.1);
+    --shadow-elevated: 0 12px 40px -8px hsl(220 45% 20% / 0.15);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 220 50% 8%;
+    --foreground: 40 20% 92%;
+    --card: 220 45% 12%;
+    --card-foreground: 40 20% 92%;
+    --popover: 220 45% 12%;
+    --popover-foreground: 40 20% 92%;
+    --primary: 40 65% 50%;
+    --primary-foreground: 220 50% 8%;
+    --secondary: 220 35% 18%;
+    --secondary-foreground: 40 20% 92%;
+    --muted: 220 30% 16%;
+    --muted-foreground: 220 10% 55%;
+    --accent: 40 65% 50%;
+    --accent-foreground: 220 50% 8%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 210 40% 98%;
+    --border: 220 30% 20%;
+    --input: 220 30% 20%;
+    --ring: 40 65% 50%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-body antialiased;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-heading;
+  }
+}
+
+@layer components {
+  .section-subtitle {
+    @apply text-sm font-semibold uppercase tracking-[0.2em] text-accent;
+  }
+
+  .section-title {
+    @apply text-3xl md:text-4xl font-heading font-bold text-foreground leading-tight;
+  }
+
+  .gold-underline {
+    @apply relative pb-4;
+  }
+  .gold-underline::after {
+    content: '';
+    @apply absolute bottom-0 left-0 w-16 h-0.5 bg-accent;
+  }
+  .gold-underline-center::after {
+    @apply left-1/2 -translate-x-1/2;
+  }
+}
+
+/* Smooth scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Hero slider animation */
+@keyframes fadeSlide {
+  0% { opacity: 0; transform: scale(1.05); }
+  8% { opacity: 1; transform: scale(1); }
+  30% { opacity: 1; transform: scale(1); }
+  38% { opacity: 0; transform: scale(1.02); }
+  100% { opacity: 0; transform: scale(1.05); }
+}
